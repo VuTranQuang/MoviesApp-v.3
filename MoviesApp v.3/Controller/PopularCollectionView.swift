@@ -13,26 +13,33 @@ struct NibName {
 }
 
 class PopularCollectionView: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    let reFresh = UIRefreshControl()
     var isGrib = false {
         didSet {
             collectionView.reloadData()
         }
     }
-    
+    var pageNumber = 1
     var listResults = [Results]()
     var images = [Images]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Refresh Control
+        collectionView.refreshControl = reFresh
+        reFresh.tintColor = .blue
+        reFresh.addTarget(self, action: #selector(reFreshData), for: .valueChanged)
+        
         
         // Call Data from API
         APIService.callAPI(withAPIName: .configuration, method: .get, success: { json in
             let configuration = BaseURL(dict: json)
             // lưu Data base
             self.images = configuration.images
-            APIService.callAPI(withAPIName: .popular, movieId: nil, method: .get, param: ["page": 1], success: { jsonData in
+            APIService.callAPI(withAPIName: .popular, movieId: nil, method: .get, param: ["page": self.pageNumber], success: { jsonData in
                 let model = Popular(dict: jsonData)
                 self.listResults = model.results
                 self.collectionView.reloadData()
@@ -44,12 +51,20 @@ class PopularCollectionView: UIViewController {
         self.collectionView.reloadData()
         
         self.collectionView.register(UINib(nibName: "HorizontalCollectionCell", bundle: nil), forCellWithReuseIdentifier: "horizontal")
-         self.collectionView.register(UINib(nibName: "VerticalCollectionCell", bundle: nil), forCellWithReuseIdentifier: "vertical")
+        self.collectionView.register(UINib(nibName: "VerticalCollectionCell", bundle: nil), forCellWithReuseIdentifier: "vertical")
+    }
+    @objc func reFreshData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            self.listResults = [self.listResults.removeFirst()]
+            self.reFresh.endRefreshing()
+            self.collectionView.reloadData()
+        }
     }
     
     @IBAction func onClickEdit(_ sender: UIBarButtonItem) {
         isGrib = !isGrib
     }
+    
     
 }
 
@@ -64,8 +79,6 @@ extension PopularCollectionView: UICollectionViewDelegate, UICollectionViewDataS
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "vertical", for: indexPath) as! VerticalCollectionCell
             cell.bindingData(items: moviesList, configuration: images[0])
-//            cell.layer.borderColor = UIColor.black.cgColor
-//            cell.layer.borderWidth = 0.5
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "horizontal", for: indexPath) as! HorizontalCollectionCell
@@ -76,12 +89,38 @@ extension PopularCollectionView: UICollectionViewDelegate, UICollectionViewDataS
                 cell.adult.isHidden = false
                 cell.adult.text = "18+"
             }
-//            cell.layer.borderColor = UIColor.black.cgColor
-//            cell.layer.borderWidth = 0.5
             return cell
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastItem = listResults.count - 1
+        if indexPath.item == lastItem {
+            loadMore()
+        }
+    }
+    
+    func loadMore() {
+        var newItem = [Results]()
+        pageNumber += 1
+        APIService.callAPI(withAPIName: .configuration, method: .get, success: { json in
+            let configuration = BaseURL(dict: json)
+            // lưu Data base
+            self.images = configuration.images
+            APIService.callAPI(withAPIName: .popular, movieId: nil, method: .get, param: ["page": self.pageNumber], success: { jsonData in
+                let model = Popular(dict: jsonData)
+                newItem = model.results
+                newItem.forEach({ item in
+                    self.listResults.append(item)
+                })
+                self.collectionView.reloadData()
+            }, failure: { error in
+                print(error)
+            })
+        }, failure: { error in
+        })
+        
+    }
     
 }
 
@@ -99,4 +138,5 @@ extension PopularCollectionView: UICollectionViewDelegateFlowLayout {
         }
         return 5
     }
+    
 }

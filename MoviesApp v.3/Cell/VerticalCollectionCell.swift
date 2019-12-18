@@ -23,8 +23,17 @@ class VerticalCollectionCell: UICollectionViewCell {
         // Load Image from URL
         guard let dropSize = configuration.dropSize else { return }
         guard let secureURL = configuration.secureUrl else { return }
-        guard let dropPath = items.dropPath else { return }
+        var dropPath: String!
+        if items.dropPath == nil {
+            dropPath = items.posterPath
+        } else {
+            dropPath = items.dropPath
+        }
         self.imageMovie.load(url: HorizontalCollectionCell.fillImageURL(baseURL: secureURL, backdropSize: dropSize[0], dropPath: dropPath))
+    }
+    override func prepareForReuse() {
+        titleMovie.text = ""
+        imageMovie.image = UIImage()
     }
 
 }

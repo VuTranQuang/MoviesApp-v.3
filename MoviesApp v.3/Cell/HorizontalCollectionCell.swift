@@ -38,8 +38,22 @@ class HorizontalCollectionCell: UICollectionViewCell {
         // Load Image from URL
         guard let dropSize = configuration.dropSize else { return }
         guard let secureURL = configuration.secureUrl else { return }
-        guard let dropPath = item.dropPath else { return }
+        var dropPath: String!
+        if item.dropPath == nil {
+            dropPath = item.posterPath
+        } else {
+            dropPath = item.dropPath
+        }
         self.imageMovie.load(url: HorizontalCollectionCell.fillImageURL(baseURL: secureURL, backdropSize: dropSize[0], dropPath: dropPath))
+    }
+    
+    override func prepareForReuse() {
+        titleMovie.text = ""
+        releaseDate.text = ""
+        rating.text = ""
+        overview.text = ""
+        adult.text = ""
+        imageMovie.image = UIImage()
     }
     @IBAction func favoriteButton(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected

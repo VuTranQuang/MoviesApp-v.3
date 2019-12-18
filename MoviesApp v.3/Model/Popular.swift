@@ -26,6 +26,7 @@ class Results {
     var overview: String?
     var release: String?
     var dropPath: String?
+    var posterPath: String?
     var id: Int?
     
     init(dict: JSON) {
@@ -35,6 +36,7 @@ class Results {
         overview = dict["overview"] as? String
         release = dict["release_date"] as? String
         dropPath = dict["backdrop_path"] as? String
+        posterPath = dict["poster_path"] as? String
         id = dict["id"] as? Int
     }
 }
