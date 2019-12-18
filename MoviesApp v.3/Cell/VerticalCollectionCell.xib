@@ -19,20 +19,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="322" height="223"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-q1-7GP">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-q1-7GP" customClass="View" customModule="MoviesApp_v_3" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="322" height="223"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf9-Ya-0Ib">
-                                <rect key="frame" x="5" y="197" width="312" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf9-Ya-0Ib">
+                                <rect key="frame" x="5" y="197.5" width="312" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="B42-As-dkl">
-                                <rect key="frame" x="0.0" y="0.0" width="322" height="192"/>
+                                <rect key="frame" x="0.0" y="0.0" width="322" height="187.5"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Pf9-Ya-0Ib" secondAttribute="trailing" constant="5" id="3o8-J9-UvW"/>
                             <constraint firstItem="B42-As-dkl" firstAttribute="top" secondItem="7VG-q1-7GP" secondAttribute="top" id="ASm-pU-1EB"/>
@@ -40,8 +40,13 @@
                             <constraint firstItem="Pf9-Ya-0Ib" firstAttribute="leading" secondItem="7VG-q1-7GP" secondAttribute="leading" constant="5" id="fX3-qD-yfo"/>
                             <constraint firstItem="B42-As-dkl" firstAttribute="leading" secondItem="7VG-q1-7GP" secondAttribute="leading" id="jLq-l6-6UN"/>
                             <constraint firstAttribute="bottom" secondItem="Pf9-Ya-0Ib" secondAttribute="bottom" constant="5" id="kUy-wx-Xyu"/>
-                            <constraint firstItem="Pf9-Ya-0Ib" firstAttribute="top" secondItem="B42-As-dkl" secondAttribute="bottom" constant="5" id="t50-41-1qt"/>
+                            <constraint firstItem="Pf9-Ya-0Ib" firstAttribute="top" secondItem="B42-As-dkl" secondAttribute="bottom" constant="10" id="t50-41-1qt"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -53,6 +58,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="322" height="223"/>
+            <connections>
+                <outlet property="imageMovie" destination="B42-As-dkl" id="CBk-kM-vSz"/>
+                <outlet property="titleMovie" destination="Pf9-Ya-0Ib" id="Dtg-4f-EJS"/>
+            </connections>
             <point key="canvasLocation" x="32" y="121.88905547226388"/>
         </collectionViewCell>
     </objects>

@@ -18,6 +18,9 @@
 		5609DB7C23A8DDAA00C5C5A4 /* HorizontalCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5609DB7A23A8DDAA00C5C5A4 /* HorizontalCollectionCell.xib */; };
 		5609DB7F23A8DE2500C5C5A4 /* VerticalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB7D23A8DE2500C5C5A4 /* VerticalCollectionCell.swift */; };
 		5609DB8023A8DE2500C5C5A4 /* VerticalCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5609DB7E23A8DE2500C5C5A4 /* VerticalCollectionCell.xib */; };
+		5609DB8223A9C08900C5C5A4 /* Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB8123A9C08900C5C5A4 /* Popular.swift */; };
+		5609DB8423A9CC1A00C5C5A4 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB8323A9CC1A00C5C5A4 /* BaseURL.swift */; };
+		5609DB8623A9CF2600C5C5A4 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB8523A9CF2600C5C5A4 /* APIServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		5609DB7A23A8DDAA00C5C5A4 /* HorizontalCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HorizontalCollectionCell.xib; sourceTree = "<group>"; };
 		5609DB7D23A8DE2500C5C5A4 /* VerticalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionCell.swift; sourceTree = "<group>"; };
 		5609DB7E23A8DE2500C5C5A4 /* VerticalCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerticalCollectionCell.xib; sourceTree = "<group>"; };
+		5609DB8123A9C08900C5C5A4 /* Popular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular.swift; sourceTree = "<group>"; };
+		5609DB8323A9CC1A00C5C5A4 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		5609DB8523A9CF2600C5C5A4 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,8 @@
 		5609DB7723A8DCC500C5C5A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5609DB8123A9C08900C5C5A4 /* Popular.swift */,
+				5609DB8323A9CC1A00C5C5A4 /* BaseURL.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 		5609DB7823A8DCD100C5C5A4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				5609DB8523A9CF2600C5C5A4 /* APIServices.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -199,8 +208,11 @@
 				5609DB7623A8DCB000C5C5A4 /* UIView + Extension.swift in Sources */,
 				5609DB6023A8D7D900C5C5A4 /* PopularCollectionView.swift in Sources */,
 				5609DB5E23A8D7D900C5C5A4 /* AppDelegate.swift in Sources */,
+				5609DB8223A9C08900C5C5A4 /* Popular.swift in Sources */,
 				5609DB6623A8D7D900C5C5A4 /* MoviesApp_v_3.xcdatamodeld in Sources */,
+				5609DB8423A9CC1A00C5C5A4 /* BaseURL.swift in Sources */,
 				5609DB7F23A8DE2500C5C5A4 /* VerticalCollectionCell.swift in Sources */,
+				5609DB8623A9CF2600C5C5A4 /* APIServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
