@@ -15,6 +15,8 @@ struct NibName {
 class PopularCollectionView: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+
+    
     
     
     let reFresh = UIRefreshControl()
@@ -53,16 +55,21 @@ class PopularCollectionView: UIViewController {
         self.collectionView.register(UINib(nibName: "HorizontalCollectionCell", bundle: nil), forCellWithReuseIdentifier: "horizontal")
         self.collectionView.register(UINib(nibName: "VerticalCollectionCell", bundle: nil), forCellWithReuseIdentifier: "vertical")
     }
+
     @objc func reFreshData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             self.listResults = [self.listResults.removeFirst()]
             self.reFresh.endRefreshing()
+            self.pageNumber = 1
             self.collectionView.reloadData()
         }
     }
     
     @IBAction func onClickEdit(_ sender: UIBarButtonItem) {
         isGrib = !isGrib
+    }
+    @IBAction func openInfo(_ sender: UIBarButtonItem) {
+        NotificationCenter.default.post(name: Notification.Name("isMenuShow"), object: nil)
     }
     
     

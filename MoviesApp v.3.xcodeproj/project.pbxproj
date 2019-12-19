@@ -21,6 +21,12 @@
 		5609DB8223A9C08900C5C5A4 /* Popular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB8123A9C08900C5C5A4 /* Popular.swift */; };
 		5609DB8423A9CC1A00C5C5A4 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB8323A9CC1A00C5C5A4 /* BaseURL.swift */; };
 		5609DB8623A9CF2600C5C5A4 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB8523A9CF2600C5C5A4 /* APIServices.swift */; };
+		5609DB8823AA111D00C5C5A4 /* Fav.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5609DB8723AA111D00C5C5A4 /* Fav.storyboard */; };
+		5609DB8A23AA13D200C5C5A4 /* Information.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5609DB8923AA13D200C5C5A4 /* Information.storyboard */; };
+		5609DB8D23AA14FB00C5C5A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5609DB8C23AA14FB00C5C5A4 /* ViewController.swift */; };
+		564E4A0C23AB20FD00ABA87A /* InformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E4A0B23AB20FD00ABA87A /* InformationController.swift */; };
+		564E4A0E23AB213C00ABA87A /* EditControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E4A0D23AB213C00ABA87A /* EditControl.swift */; };
+		564E4A1023AB2D6500ABA87A /* TypeInfor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E4A0F23AB2D6500ABA87A /* TypeInfor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,12 @@
 		5609DB8123A9C08900C5C5A4 /* Popular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popular.swift; sourceTree = "<group>"; };
 		5609DB8323A9CC1A00C5C5A4 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
 		5609DB8523A9CF2600C5C5A4 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		5609DB8723AA111D00C5C5A4 /* Fav.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fav.storyboard; sourceTree = "<group>"; };
+		5609DB8923AA13D200C5C5A4 /* Information.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Information.storyboard; sourceTree = "<group>"; };
+		5609DB8C23AA14FB00C5C5A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		564E4A0B23AB20FD00ABA87A /* InformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationController.swift; sourceTree = "<group>"; };
+		564E4A0D23AB213C00ABA87A /* EditControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditControl.swift; sourceTree = "<group>"; };
+		564E4A0F23AB2D6500ABA87A /* TypeInfor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeInfor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +90,7 @@
 				5609DB7723A8DCC500C5C5A4 /* Model */,
 				5609DB7823A8DCD100C5C5A4 /* Network */,
 				5609DB7423A8DC9300C5C5A4 /* Support File */,
-				5609DB6123A8D7D900C5C5A4 /* Main.storyboard */,
+				5609DB8B23AA14A400C5C5A4 /* Storyboard */,
 				5609DB6723A8D7DC00C5C5A4 /* Assets.xcassets */,
 				5609DB6923A8D7DC00C5C5A4 /* LaunchScreen.storyboard */,
 				5609DB6C23A8D7DC00C5C5A4 /* Info.plist */,
@@ -90,7 +102,8 @@
 		5609DB7223A8DC5700C5C5A4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5609DB5F23A8D7D900C5C5A4 /* PopularCollectionView.swift */,
+				564E4A0923AB20B500ABA87A /* MainControl */,
+				564E4A0A23AB20C800ABA87A /* InformationControl */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -118,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5609DB8123A9C08900C5C5A4 /* Popular.swift */,
+				564E4A0F23AB2D6500ABA87A /* TypeInfor.swift */,
 				5609DB8323A9CC1A00C5C5A4 /* BaseURL.swift */,
 			);
 			path = Model;
@@ -129,6 +143,34 @@
 				5609DB8523A9CF2600C5C5A4 /* APIServices.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5609DB8B23AA14A400C5C5A4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5609DB6123A8D7D900C5C5A4 /* Main.storyboard */,
+				5609DB8723AA111D00C5C5A4 /* Fav.storyboard */,
+				5609DB8923AA13D200C5C5A4 /* Information.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		564E4A0923AB20B500ABA87A /* MainControl */ = {
+			isa = PBXGroup;
+			children = (
+				5609DB5F23A8D7D900C5C5A4 /* PopularCollectionView.swift */,
+				5609DB8C23AA14FB00C5C5A4 /* ViewController.swift */,
+			);
+			path = MainControl;
+			sourceTree = "<group>";
+		};
+		564E4A0A23AB20C800ABA87A /* InformationControl */ = {
+			isa = PBXGroup;
+			children = (
+				564E4A0B23AB20FD00ABA87A /* InformationController.swift */,
+				564E4A0D23AB213C00ABA87A /* EditControl.swift */,
+			);
+			path = InformationControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +234,9 @@
 				5609DB6B23A8D7DC00C5C5A4 /* LaunchScreen.storyboard in Resources */,
 				5609DB8023A8DE2500C5C5A4 /* VerticalCollectionCell.xib in Resources */,
 				5609DB6823A8D7DC00C5C5A4 /* Assets.xcassets in Resources */,
+				5609DB8A23AA13D200C5C5A4 /* Information.storyboard in Resources */,
 				5609DB6323A8D7D900C5C5A4 /* Main.storyboard in Resources */,
+				5609DB8823AA111D00C5C5A4 /* Fav.storyboard in Resources */,
 				5609DB7C23A8DDAA00C5C5A4 /* HorizontalCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,11 +248,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5609DB8D23AA14FB00C5C5A4 /* ViewController.swift in Sources */,
+				564E4A1023AB2D6500ABA87A /* TypeInfor.swift in Sources */,
 				5609DB7B23A8DDAA00C5C5A4 /* HorizontalCollectionCell.swift in Sources */,
 				5609DB7623A8DCB000C5C5A4 /* UIView + Extension.swift in Sources */,
+				564E4A0C23AB20FD00ABA87A /* InformationController.swift in Sources */,
 				5609DB6023A8D7D900C5C5A4 /* PopularCollectionView.swift in Sources */,
 				5609DB5E23A8D7D900C5C5A4 /* AppDelegate.swift in Sources */,
 				5609DB8223A9C08900C5C5A4 /* Popular.swift in Sources */,
+				564E4A0E23AB213C00ABA87A /* EditControl.swift in Sources */,
 				5609DB6623A8D7D900C5C5A4 /* MoviesApp_v_3.xcdatamodeld in Sources */,
 				5609DB8423A9CC1A00C5C5A4 /* BaseURL.swift in Sources */,
 				5609DB7F23A8DE2500C5C5A4 /* VerticalCollectionCell.swift in Sources */,
